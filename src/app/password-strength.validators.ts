@@ -32,9 +32,9 @@ var passwordPattern: string = "";
   if(passwordPattern != "" )
   {
 
-   let passwordStrength =  passwordPattern.replace(/,\s*$/, "");
+   let withoutLastComma =  passwordPattern.replace(/,\s*$/, "");
     
-    return {passwordStrength} 
+    return {passwordStrength:withoutLastComma} 
   }
   
   return null;
