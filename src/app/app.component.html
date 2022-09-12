@@ -1,0 +1,15 @@
+<div [formGroup]="form">
+<input type="password" formControlName="password"/>
+</div>
+<div class="errors" *ngIf="form.get('password').invalid && (form.get('password').touched || form.get('password').dirty)">
+<!-- <div *ngIf="form.get('password').hasError('required')">
+ password is required
+</div> -->
+<div *ngIf="form.get('password').hasError('minlength')">
+Min 8 characters reqd.
+</div>
+<div class="error-text" *ngIf="form.get('password').hasError('passwordStrength')">
+{{form.get('password').errors['passwordStrength']}}
+</div>
+</div>
+
